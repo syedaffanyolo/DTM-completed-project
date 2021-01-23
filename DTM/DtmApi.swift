@@ -12,7 +12,7 @@ import Foundation
 // our api structuring 
 struct GrNoida : Codable{
     
-    
+   
     let gvname : String
 //    let gvdis : String
 //    let gvshops:[String]
@@ -194,6 +194,7 @@ struct Delhi : Codable{
 //    let scfloors:Int
 }
 struct detailgr : Codable{
+    let gvfloornames : [String]
         let gvdis : String
       //  let gvshops:[String]
        // let gvid:Int
@@ -201,6 +202,8 @@ struct detailgr : Codable{
        // let gvshopphone:[Int]
        // let gvshopnumbers:Int
         let gvfloorimages:[String]
+    
+    let mmfloornames : [String]
         let mmdis : String
         let mmfloors:Int
        // let mmshops:[String]
@@ -208,6 +211,8 @@ struct detailgr : Codable{
        // let mmshopphone:[Int]
        // let mmshopnumbers:Int
         let mmfloorimages:[String]
+    
+    let apfloornames : [String]
         let apdis : String
       //  let apshops:[String]
      //   let apid:Int
@@ -220,6 +225,7 @@ struct detailgr : Codable{
       //  let oaid:Int
       //  let oashopphone:[Int]
        // let oashopnumbers:Int
+    let oafloornames : [String]
         let oafloorimages:[String]
         let oafloors:Int
 }

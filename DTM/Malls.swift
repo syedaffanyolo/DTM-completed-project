@@ -227,10 +227,18 @@ class Malls: UIViewController, UITableViewDelegate,  UITableViewDataSource {
         static var oadis : String? = nil
         
         
+        static var dataFloor : [Data]? = nil
+        // array contains all the floors in malls ex. logix city noida
+     
+        static var gvfloornames : [String]? = nil
+        static var mmfloornames : [String]? = nil
+        
+        static var apfloornames : [String]? = nil
+       
+        static var oafloornames : [String]? = nil
         //noida
         
         static var dataimg : [Data]? = nil
-        static var dataFloorLc : [Data]? = nil // array contains all the floors in lc i.e. logix city noida
         static var phoneNumberslg : [Int]? = nil
         static var phoneNumbersg : [Int]? = nil
         static var phoneNumbers1 : [Int]? = nil
