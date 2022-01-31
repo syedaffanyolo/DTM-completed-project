@@ -10,6 +10,7 @@ import UIKit
 class shopView: UIViewController, UITableViewDelegate,  UITableViewDataSource {
     let url = "https://dtmappapi.herokuapp.com/shopn"
     //outlets
+    @IBOutlet weak var back: UIBarButtonItem!
     @IBOutlet weak var shopTable: UITableView!
     @IBOutlet weak var navbar: UINavigationItem!
     
@@ -100,6 +101,13 @@ class shopView: UIViewController, UITableViewDelegate,  UITableViewDataSource {
         return cell
     }
  
+    
+    @IBAction func back(_ sender: Any) {
+        print("hereis\(Malls.importer.gr1images)")
+        performSegue(withIdentifier: "backtodetail", sender: self)
+    }
+    
+    
    @objc func callClicked(_ sender: UIButton){
         
         let callButton = sender.tag

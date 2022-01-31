@@ -18,6 +18,8 @@ class Malls: UIViewController, UITableViewDelegate,  UITableViewDataSource {
     
     
     
+    @IBOutlet weak var backbutton: UIBarButtonItem!
+    
     
     //all variables here
    
@@ -187,6 +189,12 @@ class Malls: UIViewController, UITableViewDelegate,  UITableViewDataSource {
         
         return cell
     }
+    
+    @IBAction func backbuttontoregion(_ sender: Any) {
+       performSegue(withIdentifier: "backtoregion", sender: self)
+        print("oh hey mark")
+    }
+    
     @objc func mallTapped(_ sender: UIButton){ // ok so this function doesnt need explanation beause i dont know how to but this is hardcoded to get hold of button tapped in each and every indiviual cells in the table view with the help of sender tag-- this func is a target func targeted on line (110)
         
         let button = sender.tag
@@ -195,6 +203,12 @@ class Malls: UIViewController, UITableViewDelegate,  UITableViewDataSource {
         performSegue(withIdentifier: "detail", sender: self)
         
     }
+    
+    //backbutton to killtasks
+    
+ 
+    
+    
     // global variables for the detail view we have
     struct importer {
         static var mallsingrimg : [String]? = []
@@ -212,20 +226,28 @@ class Malls: UIViewController, UITableViewDelegate,  UITableViewDataSource {
         //global callsender.tag
         static var callsender : Int? = nil
         //gr noida
-        
+        static var gr1images: [UIImage]? = nil
+        static var killTask : Bool = false
         static var gvfloors : Int? = nil
         static var omfloors : Int? = nil
         static var anfloors : Int? = nil
-        static var msfloors : Int? = nil
+        static var mmfloors : Int? = nil
         static var gvname :String? = nil
-        static var msname :String? = nil
+        static var mmname :String? = nil
         static var anname :String? = nil
         static var oaname :String? = nil
         static var gvdis : String? = nil
-        static var msdis : String? = nil
+        static var mmdis : String? = nil
         static var andis : String? = nil
         static var oadis : String? = nil
-        
+        static var oafloors : Int? = nil
+        static var oashopphone : [Int]? = nil
+        static var oashopnumbers: Int? = nil
+        static var oafloorimages: [String]? = nil
+        static var oashops : [String]? = nil
+        static var apshopsaf : [String:String]? = nil
+        static var apshopsg : [String:String]? = nil
+        static var apshops2 : [String:String]? = nil
         
         static var dataFloor : [Data]? = nil
         // array contains all the floors in malls ex. logix city noida
@@ -234,7 +256,18 @@ class Malls: UIViewController, UITableViewDelegate,  UITableViewDataSource {
         static var mmfloornames : [String]? = nil
         
         static var apfloornames : [String]? = nil
-       
+        static var apname :String? = nil
+        static var apdis : String? = nil
+        static var apfloors : Int? = nil
+        static var apshopphone : [Int]? = nil
+        static var apshopnumbers: Int? = nil
+        static var apfloorimages: [String]? = nil
+        static var mmfloorimages : [String]? = nil
+        static var mmshopnumbers : Int? = nil
+        static var mmshopphone : [Int]? = nil
+        static var mmshops : [String]? = nil
+        
+        
         static var oafloornames : [String]? = nil
         //noida
         

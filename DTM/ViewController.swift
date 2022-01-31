@@ -53,7 +53,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         // rendering all the stuff for our location picker view
-        render()
+        //render()
         loderfu()
         
         
@@ -111,7 +111,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
           //  Malls.importer.gvdis = json.gvdis
           //  Malls.importer.gvfloors = json.gvfloors
                                       
-            Malls.importer.msname = json.mmname
+            Malls.importer.mmname = json.mmname
           //  Malls.importer.msdis = json.mmdis
           //  Malls.importer.msfloors = json.mmfloors
                                       

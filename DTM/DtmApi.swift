@@ -194,41 +194,62 @@ struct Delhi : Codable{
 //    let scfloors:Int
 }
 struct detailgr : Codable{
-    let gvfloornames : [String]
+        let gvfloornames : [String]
         let gvdis : String
-      //  let gvshops:[String]
-       // let gvid:Int
+       // let gvshopslg:[String]
+    let gvshops:[String]
+   
+    
+        let gvid:Int
         let gvfloors:Int
-       // let gvshopphone:[Int]
-       // let gvshopnumbers:Int
+        let gvshopphone:[Int]
+        let gvshopnumbers:Int
         let gvfloorimages:[String]
     
-    let mmfloornames : [String]
+}
+struct detailgr1 : Codable{
+        let mmfloornames : [String]
         let mmdis : String
         let mmfloors:Int
-       // let mmshops:[String]
-      //  let mmid:Int
-       // let mmshopphone:[Int]
-       // let mmshopnumbers:Int
-        let mmfloorimages:[String]
+        let mmfloorimages : [String]
+        let mmshops:[String]
+       let mmid:Int
+        let mmshopphone:[Int]
+        let mmshopnumbers:Int
+       // let mmfloorimages:[String]
+    
+}
+struct detailgr2 : Codable{
     
     let apfloornames : [String]
         let apdis : String
-      //  let apshops:[String]
-     //   let apid:Int
-     //   let apshopphone:[Int]
-       // let apshopnumbers:Int
+    let apshopsaf:[
+        String:String
+    ]
+    let apshopsg:[
+        String:String
+    ]
+    let apshops2:[
+        String:String
+    ]
+        let apid:Int
+        let apshopphone:[Int]
+        let apshopnumbers:Int
         let apfloorimages:[String]
         let apfloors:Int
-        let oadis : String
-      //  let oashops:[String]
-      //  let oaid:Int
-      //  let oashopphone:[Int]
-       // let oashopnumbers:Int
-    let oafloornames : [String]
-        let oafloorimages:[String]
-        let oafloors:Int
+       
 }
+struct detailgr3 : Codable{
+    let oadis : String
+    let oashops:[String]
+    let oaid:Int
+    let oashopphone:[Int]
+    let oashopnumbers:Int
+    let oafloornames : [String]
+    let oafloorimages:[String]
+    let oafloors:Int
+}
+ 
 struct detailn : Codable{
         let dmdis : String
       
