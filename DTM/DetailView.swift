@@ -12,6 +12,7 @@ class DetailView: UIViewController, UITableViewDelegate,  UITableViewDataSource 
     
     
     // all outlets
+    @IBOutlet weak var SearchBar: UISearchBar!
     @IBOutlet weak var backtomalls: UIBarButtonItem!
     //api link
     let urlgr = "https://dtmappapi.herokuapp.com/detailgr"
@@ -20,12 +21,16 @@ class DetailView: UIViewController, UITableViewDelegate,  UITableViewDataSource 
     let urlgr3 = "https://dtmappapi.herokuapp.com/detailgr3"
     let url2 = "https://dtmappapi.herokuapp.com/detailn"
     let url3 = "https://dtmappapi.herokuapp.com/detaild"
+    let url4 = "https://dtmappapi.herokuapp.com/scgv"
     var counter  = 0
+    var filtershoparr : [String]?
+    var scshopdata : [String]? = []
     var imageArrForgv : [Data]? = []
     var imageArrFormm : [Data]? = []
     var imageArrForoa : [Data]? = []
     var imageArrForap : [Data]? = []
     var imageArrForlc : [Data]? = []
+    var scfloor : String? = ""
     var jsong : detailgr?
     var dis : String = ""
     var images : UIImage?
@@ -63,15 +68,22 @@ class DetailView: UIViewController, UITableViewDelegate,  UITableViewDataSource 
         //rendering all the detail for the selcted mall while the detail seque starts at first
         // backing.target = self
         // backing.action = #selector(backed(_:))
+        filtershoparr = []
+        SearchBar.delegate = self
         blurView.bounds = self.view.bounds
         zoomView.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width*0.9, height: self.view.bounds.height*0.8)
         zoomView.layer.cornerRadius = 5
         counter = 0
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         // navigation.isEnabled = false
         
         //print("heloo\(floornumbercell)")
     }
-    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     // navigation/map action
     @IBAction func navigationButton(_ sender: Any) {
         //giving address to the mapkit to the value of the current value of dislabel
@@ -148,9 +160,16 @@ class DetailView: UIViewController, UITableViewDelegate,  UITableViewDataSource 
             case 0:
                 if datastgr0 == false{
                     let pr = try? JSONDecoder().decode(detailgr.self, from: Data(contentsOf: URL(string: urlgr)!))
+                    let pr2 = try? JSONDecoder().decode(Scgv.self, from: Data(contentsOf: URL(string: url4)!))
+                    Malls.importer.scgvlg = pr2?.gvlg
+                    Malls.importer.scgvg = pr2?.gvg
+                    Malls.importer.scgvug = pr2?.gvug
+                    Malls.importer.scgv1 = pr2?.gv1
+                    Malls.importer.scgv2 = pr2?.gv2
                     Malls.importer.gvdis = pr?.gvdis
                     Malls.importer.gvfloors = pr?.gvfloors
                     Malls.importer.gvfloornames = pr?.gvfloornames
+                    Malls.importer.gvshopnumbers = [4,6,2,1,2]
                     print("grand\(pr?.gvfloorimages)")
                     let gvfloorurl = [pr!.gvfloorimages[0], pr!.gvfloorimages[1],pr!.gvfloorimages[2],pr!.gvfloorimages[3],pr!.gvfloorimages[4]]
                     for i in 0...4{ // getting one by one data from the array we make below
@@ -165,20 +184,11 @@ class DetailView: UIViewController, UITableViewDelegate,  UITableViewDataSource 
 
                     datastgr0 = true
                 }
-                //print("here\(Malls.importer.dataFloor)")
-//                if Malls.importer.killTask == false{
-//                    //let image =
-//                   // Malls.importer.gr1images = [UIImage(data: Malls.importer.dataFloor)]
-//                    //print("heretoo\(Malls.importer.dataFloor)")
-//                    //Malls.importer.gr1images![indexPath.row] =
-//                   //print( "here\(UIImage(data: Malls.importer.dataFloor![indexPath.row])!)")
-//                   // print("doingmyjob\(indexPath.row)")
-//
-//                }
-//                if indexPath.row == 2{
-//                    Malls.importer.killTask = true
-//                   // print("doingmyjob\(Malls.importer.gr1images)")
-//                }
+
+
+
+
+
                 
                 
                 DispatchQueue.main.async {
@@ -212,15 +222,16 @@ class DetailView: UIViewController, UITableViewDelegate,  UITableViewDataSource 
                     Malls.importer.mmshops = pr?.mmshops
                     Malls.importer.mmfloornames = pr?.mmfloornames
                     Malls.importer.mmshopnumbers = pr?.mmshopnumbers
-                    let mmfloorurl = [pr?.mmfloorimages[0], pr?.mmfloorimages[1], pr?.mmfloorimages[2]]
-                    for i in 0...2{ // getting one by one data from the array we make below
-                        if let imageData = try? Data(contentsOf: URL(string:mmfloorurl[i]!)!){
+                    let mmfloorurl = [pr?.mmfloorimages[0]]
+                    print("MSx\(pr)")
+                    //for i in 0...0{ // getting one by one data from the array we make below
+                        if let imageData = try? Data(contentsOf: URL(string:mmfloorurl[0]!)!){
                             
                             self.imageArrFormm?.append(imageData) // appending the data to our image array we made in starting of the file
                             //print(imageArrForLc)
                             
                         }
-                    }
+                    
                     Malls.importer.dataFloor = imageArrFormm
                     print("MSx\( Malls.importer.dataFloor)")
 
@@ -319,8 +330,7 @@ class DetailView: UIViewController, UITableViewDelegate,  UITableViewDataSource 
                     let pr = try? JSONDecoder().decode(detailgr3.self, from: Data(contentsOf: URL(string: urlgr3)!))
                     Malls.importer.oadis = pr?.oadis
                     Malls.importer.oafloors = pr?.oafloors
-                    Malls.importer.oashopphone = pr?.oashopphone
-                    Malls.importer.oashops = pr?.oashops
+                    
                     Malls.importer.oafloornames = pr?.oafloornames
                     Malls.importer.oashopnumbers = pr?.oashopnumbers
                     print("omaxe arcade\(pr?.oafloorimages)")
@@ -401,6 +411,69 @@ class DetailView: UIViewController, UITableViewDelegate,  UITableViewDataSource 
     }
     
     
+    
+    
+    //search bar
+   
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if ViewController.myGlobalVar.region == "Greater Noida"{
+            switch Malls.importer.sender{
+            case 0:
+                
+                
+                if searchText == ""{
+                    scshopdata = []
+                }
+               // print("yolo\(pr?.gv2)")
+                for i in Malls.importer.scgvlg!{
+                    if i.lowercased().contains(searchText.lowercased()){
+                        scshopdata = []
+                        scshopdata?.append("LG")
+                    }
+                }
+                for i in Malls.importer.scgvg!{
+                    if i.lowercased().contains(searchText.lowercased()){
+                        scshopdata = []
+                        scshopdata?.append("G")
+                    }
+                }
+                for i in Malls.importer.scgvug!{
+                    if i.lowercased().contains(searchText.lowercased()){
+                        scshopdata = []
+                        scshopdata?.append("UG")
+                    }
+                }
+                for i in Malls.importer.scgv1!{
+                    if i.lowercased().contains(searchText.lowercased()){
+                        scshopdata = []
+                        scshopdata?.append("1")
+                    }
+                }
+                for i in Malls.importer.scgv2!{
+                    if i.lowercased().contains(searchText.lowercased()){
+                        scshopdata = []
+                        scshopdata?.append("2")
+                    }
+                }
+
+                for floor in Malls.importer.gvfloornames!{
+                    for i in scshopdata!{
+                        if floor == i{
+                       
+                           
+                            scfloor = floor
+                            
+                        }
+                    }
+                }
+                
+            default:
+                return
+            }
+        }
+            
+    }
+   
     //taskkiller
     @IBAction func backtomalls(_ sender: Any) {
         
@@ -451,7 +524,7 @@ class DetailView: UIViewController, UITableViewDelegate,  UITableViewDataSource 
         let button = sender.tag
         performSegue(withIdentifier: "shops", sender: self)
         Malls.importer.floorsender = button // setting sender.tag to our foorsender which is  global so can be used and initalized anywhere.
-        
+        //Malls.importer.gvshopnumbers = button
         
     }
     //functionality i.e. ibaaction for our floorbutton when its tapped refer to line()
@@ -508,5 +581,12 @@ class DetailView: UIViewController, UITableViewDelegate,  UITableViewDataSource 
     
     
 }
+extension DetailView: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let alert = UIAlertController(title: scfloor, message: "Shop found here!", preferredStyle: UIAlertController.Style.alert)
+     alert.addAction(UIAlertAction(title: "nice", style: UIAlertAction.Style.default, handler: nil))
+         self.present(alert, animated: true, completion: nil)
 
+    }
+}
 

@@ -13,4 +13,5 @@ class shopCell: UITableViewCell {
     
     @IBOutlet weak var callshop: UIButton!
     
+    @IBOutlet weak var time: UILabel!
 }

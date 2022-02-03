@@ -197,16 +197,24 @@ struct detailgr : Codable{
         let gvfloornames : [String]
         let gvdis : String
        // let gvshopslg:[String]
-    let gvshops:[String]
+    //let gvshops:[String]
    
-    
+   
+//    let gvsclg: Int? = nil
+//     let gvscg: Int?=nil
+//     let gvscug: Int?=nil
+//     let gvsc1: Int?=nil
+//     let gvsc2: Int?=nil
         let gvid:Int
         let gvfloors:Int
-        let gvshopphone:[Int]
-        let gvshopnumbers:Int
+        //let gvshopphone:[Int]
+       // let gvshopnumbers:Int
         let gvfloorimages:[String]
     
 }
+
+
+
 struct detailgr1 : Codable{
         let mmfloornames : [String]
         let mmdis : String
@@ -241,9 +249,9 @@ struct detailgr2 : Codable{
 }
 struct detailgr3 : Codable{
     let oadis : String
-    let oashops:[String]
+    //let oashops:[String]
     let oaid:Int
-    let oashopphone:[Int]
+   // let oashopphone:[Int]
     let oashopnumbers:Int
     let oafloornames : [String]
     let oafloorimages:[String]

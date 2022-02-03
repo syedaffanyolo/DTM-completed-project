@@ -36,13 +36,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     let urlforgr = "https://dtmappapi.herokuapp.com/grapi"
     let urlforn = "https://dtmappapi.herokuapp.com/napi"
     let urlford = "https://dtmappapi.herokuapp.com/dapi"
+    let urlgr = "https://dtmappapi.herokuapp.com/shopgr"
     var imageArr : [Data]? = []
     
     
+  
+
     // all outlets
     @IBOutlet weak var locPick: UIPickerView!
     @IBOutlet weak var nextb: UIButton!
-    @IBOutlet weak var loaderView: UIView!
+
+    @IBOutlet weak var loaderview: UIView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
     // making a variible of array to contain the regions oin out loc picker
@@ -63,10 +67,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.locPick.dataSource = self
         //picker view init
         locationPicker = ["Greater Noida","Noida","Delhi"]
+//        let sp = try? JSONDecoder().decode(shopgr.self, from: Data(contentsOf: URL(string: urlgr)!))
+//        print("dick\(sp)")
+    // let data = URLSessionDataTask(urlgr)
+        //if let data = try? Data(contentsOf: URL(string: urlgr)!){
         
-        
-    
-        
+      //  }
         
     }
     
@@ -322,6 +328,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     
+    @IBAction func butt(_ sender: Any) {
+        UIApplication.shared.openURL(NSURL(string: "https://docs.google.com/forms/d/e/1FAIpQLSeQ-bacDhnZAmGpZKQmjMpCenXW6ON_8pxNTivnpDiB4FQgJQ/viewform?usp=sf_link")! as URL)
+    }
     // global variable for region
     
     struct myGlobalVar {
@@ -332,16 +341,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.loader.stopAnimating()
         self.loader.isHidden = true
         self.loader.isUserInteractionEnabled = false
-        self.loaderView.isExclusiveTouch = false
-        self.loaderView.isUserInteractionEnabled = false
+        self.loaderview.isExclusiveTouch = false
+        self.loaderview.isUserInteractionEnabled = false
         
     }
     func lodervu(){
         self.loader.startAnimating()
         self.loader.isHidden = false
         self.loader.isUserInteractionEnabled = true
-        self.loaderView.isExclusiveTouch = true
-        self.loaderView.isUserInteractionEnabled = true
+        self.loaderview.isExclusiveTouch = true
+        self.loaderview.isUserInteractionEnabled = true
     }
             
         }

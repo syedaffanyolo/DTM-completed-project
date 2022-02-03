@@ -226,7 +226,29 @@ class Malls: UIViewController, UITableViewDelegate,  UITableViewDataSource {
         //global callsender.tag
         static var callsender : Int? = nil
         //gr noida
+        static var gvshopnumbers : [Int]? = nil
+        static var phlg:[String]? = nil
+        static var phg:[String]? = nil
+        static var phug:[String]? = nil
+        static var ph1:[String]? = nil
+        static var ph2:[String]? = nil
+        static var tlg: [String]? = nil
+        static var tg: [String]? = nil
+        static var tug: [String]? = nil
+        static var t1: [String]? = nil
+        static var t2: [String]? = nil
+        static var scgvlg: [String]? = nil
+        static var scgvg: [String]? = nil
+        static var scgvug: [String]? = nil
+        static var scgv1: [String]? = nil
+        static var scgv2: [String]? = nil
         static var gr1images: [UIImage]? = nil
+        static var gvshopphone : [Int]? = nil
+        static var gvshopslg : [String]? = nil
+        static var gvshopsg : [String]? = nil
+        static var gvshopsug : [String]? = nil
+        static var gvshop1 : [String]? = nil
+        static var gvshops2 : [String]? = nil
         static var killTask : Bool = false
         static var gvfloors : Int? = nil
         static var omfloors : Int? = nil
@@ -244,11 +266,11 @@ class Malls: UIViewController, UITableViewDelegate,  UITableViewDataSource {
         static var oashopphone : [Int]? = nil
         static var oashopnumbers: Int? = nil
         static var oafloorimages: [String]? = nil
-        static var oashops : [String]? = nil
+        static var oashops : [String:String]? = nil
         static var apshopsaf : [String:String]? = nil
         static var apshopsg : [String:String]? = nil
         static var apshops2 : [String:String]? = nil
-        
+        static var shopnumbers : Int = 0
         static var dataFloor : [Data]? = nil
         // array contains all the floors in malls ex. logix city noida
      

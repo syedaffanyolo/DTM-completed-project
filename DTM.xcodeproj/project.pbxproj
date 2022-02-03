@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C611214A27AB078700386957 /* Shopgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611214927AB078700386957 /* Shopgr.swift */; };
+		C611214C27AB07B300386957 /* Sformat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C611214B27AB07B300386957 /* Sformat.swift */; };
+		C61C27D127AA6D8800DDA40D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61C27D027AA6D8800DDA40D /* File.swift */; };
 		C62F05A5256BF11C00D83B49 /* DTMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62F05A4256BF11C00D83B49 /* DTMTests.swift */; };
 		C62F05B0256BF11D00D83B49 /* DTMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62F05AF256BF11D00D83B49 /* DTMUITests.swift */; };
 		C62F0600256BF1B300D83B49 /* shopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62F05F3256BF1B200D83B49 /* shopView.swift */; };
@@ -23,6 +26,7 @@
 		C62F0621256BF25500D83B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62F0620256BF25500D83B49 /* LaunchScreen.storyboard */; };
 		C62F0626256BF26600D83B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C62F0625256BF26600D83B49 /* Assets.xcassets */; };
 		C62F0631256BF36700D83B49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62F0630256BF36700D83B49 /* Main.storyboard */; };
+		C65B458227AC72DA00663585 /* Scgv.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65B458127AC72DA00663585 /* Scgv.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C611214927AB078700386957 /* Shopgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopgr.swift; sourceTree = "<group>"; };
+		C611214B27AB07B300386957 /* Sformat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sformat.swift; sourceTree = "<group>"; };
+		C61C27D027AA6D8800DDA40D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		C62F058A256BF11C00D83B49 /* DTM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DTM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62F05A0256BF11C00D83B49 /* DTMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DTMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62F05A4256BF11C00D83B49 /* DTMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTMTests.swift; sourceTree = "<group>"; };
@@ -65,6 +72,7 @@
 		C62F0620256BF25500D83B49 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C62F0625256BF26600D83B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C62F0630256BF36700D83B49 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C65B458127AC72DA00663585 /* Scgv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scgv.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,10 @@
 				C62F05F3256BF1B200D83B49 /* shopView.swift */,
 				C62F05FF256BF1B300D83B49 /* ViewController.swift */,
 				C62F05EB256BF19500D83B49 /* AppDelegate.swift */,
+				C61C27D027AA6D8800DDA40D /* File.swift */,
+				C611214927AB078700386957 /* Shopgr.swift */,
+				C611214B27AB07B300386957 /* Sformat.swift */,
+				C65B458127AC72DA00663585 /* Scgv.swift */,
 			);
 			path = DTM;
 			sourceTree = "<group>";
@@ -284,15 +296,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C62F0613256BF1B900D83B49 /* AppDelegate.swift in Sources */,
+				C61C27D127AA6D8800DDA40D /* File.swift in Sources */,
 				C62F060C256BF1B300D83B49 /* ViewController.swift in Sources */,
 				C62F060B256BF1B300D83B49 /* shopCell.swift in Sources */,
 				C62F0605256BF1B300D83B49 /* cellId.swift in Sources */,
 				C62F0600256BF1B300D83B49 /* shopView.swift in Sources */,
 				C62F0602256BF1B300D83B49 /* floorCell.swift in Sources */,
 				C62F0601256BF1B300D83B49 /* Malls.swift in Sources */,
+				C611214C27AB07B300386957 /* Sformat.swift in Sources */,
 				C62F0604256BF1B300D83B49 /* DetailView.swift in Sources */,
+				C65B458227AC72DA00663585 /* Scgv.swift in Sources */,
 				C62F0608256BF1B300D83B49 /* MallCells.swift in Sources */,
 				C62F0609256BF1B300D83B49 /* DtmApi.swift in Sources */,
+				C611214A27AB078700386957 /* Shopgr.swift in Sources */,
 				C62F0603256BF1B300D83B49 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
